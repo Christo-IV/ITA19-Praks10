@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "./App.css"
 
+// Individual task's format/layout
 const Task = (props) => {
   return (
     <div className="task border">
@@ -13,6 +14,7 @@ const Task = (props) => {
   )
 }
 
+// "Add Task" button
 const Button = (props) => {
   return (
     <button type="button" className="border" onClick={props.addTask}>Add task</button>
@@ -26,15 +28,18 @@ const App = () => {
   const [newTask, setNewTask] = useState("None");
   const [newDate, setNewDate] = useState("None");
 
+  // Gets all checked checkboxes
   const checked = document.querySelectorAll('input[type="checkbox"]:checked');
 
+  // Is supposed to somehow see if a task gets checked and then put <em></em> around the task's name.
   // useEffect(() => {
   //   for(let i = 0; i <= checked.length; i++) {
   //     console.log(checked[i]);
   //     checked[i].
   //   };
   // }, [checked]);
-
+   
+  // Adds the task to the tasks array.
   const fAddTask = () => {
     let newTaskObject = {};
     newTaskObject.name = newTask;
@@ -44,6 +49,7 @@ const App = () => {
     fResetValues();
   }
 
+  // Wipes the stuff written in the inputs.
   const fResetValues = () => {
     const textField = document.querySelector('input[type="text"]');
     const dateField = document.querySelector('input[type="date"]');
@@ -52,6 +58,7 @@ const App = () => {
     dateField.value="";
   }
 
+  // The resulting HTML
   return (
   <div className="container">
     <h1>To-do app</h1>
