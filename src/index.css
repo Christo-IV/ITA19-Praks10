@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 4px 15px;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.task p {
+  margin-left: auto;
+}
+
+input[type="text"],
+input[type="date"],
+button {
+  padding: 3px;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  background-color: gainsboro;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+/* Arigato gozaimasu, teacher! */
+input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+}
